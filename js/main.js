@@ -23,7 +23,7 @@ for (i = 0; i < 13; i++) {
 }
 
 // Get GeoJSON and put on it on the map when it loads
-nukes= L.geoJson.ajax("assets/airports.geojson", {
+nukes= L.geoJson.ajax("assets/nukes.geojson", {
   // assign a function to the onEachFeature parameter of the cellTowers object.
   // Then each (point) feature will bind a popup window.
   // The content of the popup window is the value of `feature.properties.company`
