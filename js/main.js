@@ -28,7 +28,8 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
   // Then each (point) feature will bind a popup window.
   // The content of the popup window is the value of `feature.properties.company`
   onEachFeature: function (feature, layer) {
-      layer.bindPopup(feature.properties.name);
+    var t = L.marker([52.121935,11.627137], {icon: photomarker}).addTo(map)
+        .bindPopup("<b>Nevada Tests</b>");
   },
 
 
@@ -65,6 +66,16 @@ function setColor(lat_lng, max_yield) {
     else if (max_yield > 9,100 &&  max_yield <= 18,200) { id = 1; }
     else  { id = 0; }
     return colors[id];
+}
+
+function setColor(lat_lng, max_yield) {
+    var id = 0;
+    if (max_yield > 36,140) { id = 4; }
+    else if (max_yield > 27,300 && max_yield <= 36,140) { id = 3; }
+    else if (max_yield > 18,200 && max_yield <= 27,300) { id = 2; }
+    else if (max_yield > 9,100 &&  max_yield <= 18,200) { id = 1; }
+    else  { id = 0; }
+    return L.marker(lat_lng, {color:color[id]});
 }
 
 // 7. Set style function that sets fill color.md property equal to cell tower density

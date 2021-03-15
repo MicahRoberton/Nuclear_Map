@@ -14,6 +14,16 @@ html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff;}
 
 }
 
+.fa-plane {
+      color: green;
+}
+.fa-ship {
+      color: blue;
+}
+.fa-arrow-down {
+      color: red;
+}
+
 .legend i {
     width: 16px;
     height: 16px;
