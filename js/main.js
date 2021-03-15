@@ -45,6 +45,9 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
         }
     },
 
+  onEachFeature: function(feature, layer) {
+    layer.bindPopup(feature.properties.name);
+  },
     attribution: 'Data accessed and cleaned by Thomas Drabing at https://data.world/tdreabing/nuclear-weapon-explosions | Base Map &copy; CartoDB | Made By Micah Roberton'
 }).addTo(mymap);
 
