@@ -15,7 +15,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.
 var nukes = null;
 
 // 4. build up a set of colors from colorbrewer's dark2 category
-var colors = chroma.scale('Set2').mode('lch').colors(10);
+var colors = chroma.scale('Set2').mode('lch').colors(2);
 
 // 5. dynamically append style classes to this page. This style classes will be used for colorize the markers.
 for (i = 0; i < 13; i++) {
@@ -36,11 +36,11 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
         var id = 0;
 
         if (feature.properties.medium == "air") {
-            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-building'})});
-        } else if (feature.properties.CNTL_TWR == "Y") {
-            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-building'})});
-        } else { // "N"
             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane'})});
+        } else if (feature.properties.medium == "Underground") {
+            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-arrow-down'})});
+        } else { // "N"
+            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-ship'})});
         }
     },
 
@@ -81,10 +81,6 @@ function style(feature) {
 
 // 8. Add county polygons
 // create counties variable, and assign null to it.
-var counties = null;
-counties = L.geoJson.ajax("assets/us-states.geojson", {
-    style: style
-}).addTo(mymap);
 
 
 // 9. Create Leaflet Control Object for Legend
@@ -95,15 +91,16 @@ legend.onAdd = function () {
 
     // Create Div Element and Populate it with HTML
     var div = L.DomUtil.create('div', 'legend');
-    div.innerHTML += '<b># How many Airports each State has</b><br />';
+    div.innerHTML += '<b># Max Yield</b><br />';
     div.innerHTML += '<i style="background: ' + colors[4] + '; opacity: 0.5"></i><p> 61+ </p>';
     div.innerHTML += '<i style="background: ' + colors[3] + '; opacity: 0.5"></i><p> 46-60 </p>';
     div.innerHTML += '<i style="background: ' + colors[2] + '; opacity: 0.5"></i><p> 12-45 </p>';
     div.innerHTML += '<i style="background: ' + colors[1] + '; opacity: 0.5"></i><p> 3-11 </p>';
     div.innerHTML += '<i style="background: ' + colors[0] + '; opacity: 0.5"></i><p> 0-2 </p>';
-    div.innerHTML += '<hr><b>Airport<b><br />';
-    div.innerHTML += '<i class="fa fa-building marker-color-2"></i><p> Airport with tower </p>';
-    div.innerHTML += '<i class="fa fa-plane marker-color-2"></i><p> Just Airport </p>';
+    div.innerHTML += '<hr><b>Bomb Location Medium<b><br />';
+    div.innerHTML += '<i class="fa fa-plane marker-color-2"></i><p> Air </p>';
+    div.innerHTML += '<i class="fa fa-ship marker-color-2"></i><p> Water </p>';
+    div.innerHTML += '<i class="fa fa-arrow-down marker-color-2"></i><p> Buried </p>';
     // Return the Legend div containing the HTML content
     return div;
 };
