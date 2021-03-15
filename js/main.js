@@ -36,23 +36,13 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
         var id = 0;
 
         if (feature.properties.medium == "Air") {
-            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane';})});
+            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane'})});
         } else if (feature.properties.medium == "Underground") {
             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-arrow-down'})});
         } else { // "N"
             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-ship'})});
         }
     },
-
-    pointToLayer: function (feature, latlng) {
-      var id = 0;
-      if (max_yield > 36,140) { id = 4; }
-      else if (max_yield > 27,300 && max_yield <= 36,140) { id = 3; }
-      else if (max_yield > 18,200 && max_yield <= 27,300) { id = 2; }
-      else if (max_yield > 9,100 &&  max_yield <= 18,200) { id = 1; }
-      else  { id = 0; }
-      return L.marker(latlng, {color: colors[id]});
-    }
 
     attribution: 'Data accessed and cleaned by Thomas Drabing at https://data.world/tdreabing/nuclear-weapon-explosions | Base Map &copy; CartoDB | Made By Micah Roberton'
 }).addTo(mymap);
