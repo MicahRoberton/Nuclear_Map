@@ -59,10 +59,10 @@ colors = chroma.scale(['#ffff00','#ff0000'])
 
 function setColor(density) {
     var id = 0;
-    if (max_yield > 61) { id = 4; }
-    else if (max_yield > 46 && max_yield <= 60) { id = 3; }
-    else if (max_yield > 12 && max_yield <= 45) { id = 2; }
-    else if (max_yield > 3 &&  max_yield <= 11) { id = 1; }
+    if (max_yield > 50,000) { id = 4; }
+    else if (max_yield > 36,140 && max_yield <= 60) { id = 3; }
+    else if (max_yield > 27,300 && max_yield <= 45) { id = 2; }
+    else if (max_yield > 18,200 &&  max_yield <= 11) { id = 1; }
     else  { id = 0; }
     return colors[id];
 }
