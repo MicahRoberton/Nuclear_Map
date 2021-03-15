@@ -28,7 +28,7 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
   // Then each (point) feature will bind a popup window.
   // The content of the popup window is the value of `feature.properties.company`
   onEachFeature: function (feature, layer) {
-      layer.bindPopup(feature.properties.NAME);
+      layer.bindPopup(feature.properties.name);
   },
 
 
@@ -50,7 +50,7 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
 nukes.addTo(mymap);
 
 function popup(feature) {
-    return feature.properties.name + phrase1 + ' NOT ' + phrase2;
+    return feature.properties.name;
 }
 
 // 6. Set function for color ramp
