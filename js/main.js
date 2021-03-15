@@ -8,14 +8,14 @@ var mymap = L.map('map', {
 
 
 // 2. Add a base map.
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png').addTo(mymap);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png').addTo(mymap);
 
 // 3. Add cell towers GeoJSON Data
 // Null variable that will hold cell tower data
 var nukes = null;
 
 // 4. build up a set of colors from colorbrewer's dark2 category
-var colors = chroma.scale('Set2').mode('lch').colors(2);
+var colors = chroma.scale('Set2').mode('lch').colors(10);
 
 // 5. dynamically append style classes to this page. This style classes will be used for colorize the markers.
 for (i = 0; i < 13; i++) {
@@ -35,7 +35,7 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
   pointToLayer: function (feature, latlng) {
         var id = 0;
 
-        if (feature.properties.medium == "air") {
+        if (feature.properties.medium == "Air") {
             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane'})});
         } else if (feature.properties.medium == "Underground") {
             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-arrow-down'})});
@@ -57,12 +57,12 @@ function popup(feature) {
 colors = chroma.scale(['#ffff00','#ff0000'])
     .mode('lch').colors(6)
 
-function setColor(density) {
+function setColor(max_yield) {
     var id = 0;
-    if (max_yield > 50,000) { id = 4; }
-    else if (max_yield > 36,140 && max_yield <= 60) { id = 3; }
-    else if (max_yield > 27,300 && max_yield <= 45) { id = 2; }
-    else if (max_yield > 18,200 &&  max_yield <= 11) { id = 1; }
+    if (max_yield > 36,140) { id = 4; }
+    else if (max_yield > 27,300 && max_yield <= 36,140) { id = 3; }
+    else if (max_yield > 18,200 && max_yield <= 27,300) { id = 2; }
+    else if (max_yield > 9,100 &&  max_yield <= 18,200) { id = 1; }
     else  { id = 0; }
     return colors[id];
 }
