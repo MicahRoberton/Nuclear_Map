@@ -31,6 +31,8 @@ nukes= L.geoJson.ajax("assets/airports.geojson", {
       layer.bindPopup(feature.properties.NAME);
   },
 
+  nukes.addTo(mymap);
+
 
   pointToLayer: function (feature, latlng) {
         var id = 0;
