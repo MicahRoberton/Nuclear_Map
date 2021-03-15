@@ -112,9 +112,9 @@ legend.onAdd = function () {
     div.innerHTML += '<i style="background: ' + colors[1] + '; opacity: 0.5"></i><p> 3-11 </p>';
     div.innerHTML += '<i style="background: ' + colors[0] + '; opacity: 0.5"></i><p> 0-2 </p>';
     div.innerHTML += '<hr><b>Bomb Location Medium<b><br />';
-    div.innerHTML += '<i class="fa fa-plane marker-color-2"></i><p> Air </p>';
-    div.innerHTML += '<i class="fa fa-ship marker-color-2"></i><p> Water </p>';
-    div.innerHTML += '<i class="fa fa-arrow-down marker-color-2"></i><p> Buried </p>';
+    div.innerHTML += '<i class="fa fa-plane marker-color-blue"></i><p> Air </p>';
+    div.innerHTML += '<i class="fa fa-ship marker-color-green"></i><p> Water </p>';
+    div.innerHTML += '<i class="fa fa-arrow-down marker-color-red"></i><p> Buried </p>';
     // Return the Legend div containing the HTML content
     return div;
 };
