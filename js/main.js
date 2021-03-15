@@ -105,13 +105,13 @@ legend.onAdd = function () {
 
     // Create Div Element and Populate it with HTML
     var div = L.DomUtil.create('div', 'legend');
-    div.innerHTML += '<b># Max Yield</b><br />';
-    div.innerHTML += '<i style="background: ' + colors[4] + '; opacity: 0.5"></i><p> 61+ </p>';
-    div.innerHTML += '<i style="background: ' + colors[3] + '; opacity: 0.5"></i><p> 46-60 </p>';
-    div.innerHTML += '<i style="background: ' + colors[2] + '; opacity: 0.5"></i><p> 12-45 </p>';
-    div.innerHTML += '<i style="background: ' + colors[1] + '; opacity: 0.5"></i><p> 3-11 </p>';
-    div.innerHTML += '<i style="background: ' + colors[0] + '; opacity: 0.5"></i><p> 0-2 </p>';
-    div.innerHTML += '<hr><b>Bomb Location Medium<b><br />';
+    //div.innerHTML += '<b># Max Yield</b><br />';
+    //div.innerHTML += '<i style="background: ' + colors[4] + '; opacity: 0.5"></i><p> 61+ </p>';
+    //div.innerHTML += '<i style="background: ' + colors[3] + '; opacity: 0.5"></i><p> 46-60 </p>';
+    //div.innerHTML += '<i style="background: ' + colors[2] + '; opacity: 0.5"></i><p> 12-45 </p>';
+    //div.innerHTML += '<i style="background: ' + colors[1] + '; opacity: 0.5"></i><p> 3-11 </p>';
+    //div.innerHTML += '<i style="background: ' + colors[0] + '; opacity: 0.5"></i><p> 0-2 </p>';
+    div.innerHTML += '<b>Bomb Location Medium<b><br />';
     div.innerHTML += '<i class="fa fa-plane marker-color-blue"></i><p> Air </p>';
     div.innerHTML += '<i class="fa fa-ship marker-color-green"></i><p> Water </p>';
     div.innerHTML += '<i class="fa fa-arrow-down marker-color-red"></i><p> Buried </p>';
