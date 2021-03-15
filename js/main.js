@@ -31,8 +31,6 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
       layer.bindPopup(feature.properties.NAME);
   },
 
-  nukes.addTo(mymap);
-
 
   pointToLayer: function (feature, latlng) {
         var id = 0;
@@ -48,6 +46,8 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
 
     attribution: 'Data accessed and cleaned by Thomas Drabing at https://data.world/tdreabing/nuclear-weapon-explosions | Base Map &copy; CartoDB | Made By Micah Roberton'
 }).addTo(mymap);
+
+nukes.addTo(mymap);
 
 function popup(feature) {
     return feature.properties.name + phrase1 + ' NOT ' + phrase2;
