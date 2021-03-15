@@ -1,9 +1,9 @@
 // 1. Create a map object.
 var mymap = L.map('map', {
-    center: [40.7511, -90.7401],
-    zoom: 4,
+    center: [0, 0],
+    zoom: 2,
     maxZoom: 10,
-    minZoom: 3,
+    minZoom: 2,
     detectRetina: true});
 
 
@@ -45,7 +45,7 @@ nukes= L.geoJson.ajax("assets/nukes.geojson", {
     },
 
     attribution: 'Data accessed and cleaned by Thomas Drabing at https://data.world/tdreabing/nuclear-weapon-explosions | Base Map &copy; CartoDB | Made By Micah Roberton'
-}).addTo(mymap);
+}).addTo(mymap).bindPopup(feature.properties.name);
 
 nukes.addTo(mymap);
 
