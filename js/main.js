@@ -57,7 +57,7 @@ function popup(feature) {
 colors = chroma.scale(['#ffff00','#ff0000'])
     .mode('lch').colors(6)
 
-function setColor(max_yield) {
+function setColor(lat_lng, max_yield) {
     var id = 0;
     if (max_yield > 36,140) { id = 4; }
     else if (max_yield > 27,300 && max_yield <= 36,140) { id = 3; }
