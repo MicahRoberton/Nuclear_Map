@@ -53,14 +53,6 @@ function popup(feature) {
     return feature.properties.name;
 }
 
-marker.on('mouseover', function(e) {
-  //open popup;
-  var popup = L.popup()
-   .setLatLng(e.latlng)
-   .setContent('popup')
-   .openOn(map);
-});
-
 // 6. Set function for color ramp
 colors = chroma.scale(['#ffff00','#ff0000'])
     .mode('lch').colors(6)
@@ -77,7 +69,7 @@ function setColor(lat_lng, max_yield) {
 
 // 7. Set style function that sets fill color.md property equal to cell tower density
 function style(feature) {
-    return L.marker{
+    return {
         fillColor: setColor(feature.properties.max_yield),
         fillOpacity: 0.4,
         weight: 2,
