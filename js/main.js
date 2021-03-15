@@ -115,6 +115,8 @@ legend.onAdd = function () {
     div.innerHTML += '<i class="fa fa-plane marker-color-blue"></i><p> Air </p>';
     div.innerHTML += '<i class="fa fa-ship marker-color-green"></i><p> Water </p>';
     div.innerHTML += '<i class="fa fa-arrow-down marker-color-red"></i><p> Buried </p>';
+    div.innerHTML += '<p> (press and hold icons to see each bomb&apos;s name) </p>';
+
     // Return the Legend div containing the HTML content
     return div;
 };
