@@ -24,6 +24,12 @@ Data Source: https://www.ldeo.columbia.edu/~richards/my_papers/WW_nuclear_tests_
 
 This map was developed after the author read Command and Control: Nuclear Weapons, the Damascus Accident, and the Illusion of Safety a Book by Eric Schlosser.
 
-The Map was first developed as a tile map in QGIS however the duration of processing so many tiles was not within this project's time scope which pivotted the project towards leaflet HTML using GeoJSON.
+The Map was first developed as a tile map in QGIS however the duration of processing so many tiles was not within this project's time scope which pivotted the project towards leaflet HTML using GeoJSON. This meant giving up the blast representation via a shaded radius in corespondance to the bomb's maximum yield.
 
 To get the data into GeoJSON formatting the CSV files were converted using an online file converter application. The original CSV was cleaned and stored on an opensource dataset website called 'Data.World'. The orginal data came from a scholarly journal from Columbia University.
+
+Here is the original tile map I began with.
+![Beginning Map](/img/Original_Concept.png)
+
+Here is the final web map product via the GeoJSON solution.
+![Beginning Map](img/Final_Product.png)
