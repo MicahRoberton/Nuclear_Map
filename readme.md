@@ -20,6 +20,8 @@ Cleaned data is acquired from Thomas Drabing at https://data.world/tdreabing/nuc
 
 Data Source: https://www.ldeo.columbia.edu/~richards/my_papers/WW_nuclear_tests_IASPEI_HB.pdf
 
+Icons: https://fontawesome.com
+
 **Design**
 
 This map was developed after the author read Command and Control: Nuclear Weapons, the Damascus Accident, and the Illusion of Safety a Book by Eric Schlosser.
